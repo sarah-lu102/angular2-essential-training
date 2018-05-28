@@ -1,4 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+//media item component. we want to use this from within the app component
+// (the media item component is a component within the app component)
+
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'mw-media-item',
@@ -6,10 +9,16 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['app/media-item.component.css']
 })
 export class MediaItemComponent {
-  @Input() mediaItem;
-  @Output() delete = new EventEmitter();
+  /*****for interpolation example ****/
+  // name = 'The Redemption';
+  // wasWatched() {
+  //   return true;
+  // }
 
-  onDelete() {
+  @Input() mediaItem; // tells Angular that we want it to support any property bindings placed on instances of the mw-media-item elements where the property name is mediaItem.
+
+  @Output() delete = new EventEmitter();
+  onDelete(){
     this.delete.emit(this.mediaItem);
   }
 }

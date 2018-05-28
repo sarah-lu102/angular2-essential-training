@@ -5,3 +5,5 @@ app/**/*.js.map
 npm-debug.log*
 .DS_store
 .idea
+package-lock.json
+package.json
